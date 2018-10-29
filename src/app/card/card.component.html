@@ -1,15 +1,20 @@
-<mat-card class="example-card">
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
+<mat-card class="example-card" *ngIf="isLoaded() == true">
+  <div class="card__content">
+    <img mat-card-image src="{{getSelectedClient().general.avatar}}"
+         alt="{getSelectedClient().general.lastName}}">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{getSelectedClient().general.firstName}}
+        {{getSelectedClient().general.lastName}}</mat-card-title>
+      <mat-card-subtitle>{{getSelectedClient().job.title}}</mat-card-subtitle>
+      <mat-card-subtitle>{{getSelectedClient().job.company}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Phone: {{getSelectedClient().contact.phone}}<br/>
+        Email: {{getSelectedClient().contact.email}}<br/>
+        Address: {{getSelectedClient().address.city}} {{getSelectedClient().address.street}}
+      </p>
+    </mat-card-content>
+  </div>
 </mat-card>

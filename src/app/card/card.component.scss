@@ -1,8 +1,13 @@
 .mat-card-image {
-  width: 40%;
+  width: 100%;
   padding: 15px;
 }
 
 .mat-card {
   height: 81vh;
+}
+
+.card__content {
+  width: 300px;
+  margin: 0 auto;
 }

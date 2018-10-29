@@ -1,5 +1,7 @@
 <mat-list>
-  <mat-list-item *ngFor="let client of clientList">
+  <mat-list-item *ngFor="let client of clientList; let i = index"
+                 [class.selected]="client === selectedClient"
+                 (click)="onSelect(client)">
     <div class="list__img">
       <img src="{{ client.general.avatar }}" alt="{{ client.general.lastName }}">
     </div>

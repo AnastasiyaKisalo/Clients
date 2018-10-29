@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Client} from '../models/clients';
+import {ClientService} from '../services/clients.service';
 
 @Component({
   selector: 'app-card',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+  selectedClient: Client;
 
-  constructor() { }
+  constructor(private clientService: ClientService) { }
 
   ngOnInit() {
   }
+  getSelectedClient(): Client {
+    return this.clientService.getSelectedClient();
+  }
 
+  isLoaded(): boolean {
+    return this.clientService.isClientsLoaded();
+  }
 }

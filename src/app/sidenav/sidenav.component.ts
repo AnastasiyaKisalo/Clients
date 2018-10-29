@@ -9,12 +9,13 @@ import {Client} from '../models/clients';
 })
 export class SidenavComponent implements OnInit {
   clientList: Client[] = [];
-
   constructor(private clientsService: ClientService) { }
 
   ngOnInit() {
     this.clientsService.getClients()
-      .subscribe((data) => {this.clientList = data; });
+      .subscribe((data) => {this.clientList = data;});
   }
-
+  onSelect(client: Client): void {
+    this.clientsService.setSelectedClient(client);
+  }
 }
