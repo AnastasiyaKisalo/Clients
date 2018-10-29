@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-toolbar class="app-toolbar md-indigo-theme md-whiteframe-z2 fix-top">
+  <mat-toolbar-row>
+    <app-search></app-search>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-drawer-container class="list__container">
+  <mat-drawer class="list__content" mode="side" opened>
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-card></app-card>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+<router-outlet></router-outlet>

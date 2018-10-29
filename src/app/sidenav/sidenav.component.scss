@@ -1,0 +1,30 @@
+.mat-list .mat-list-item {
+  height: 80px;
+  display: flex;
+}
+
+/deep/ .mat-list .mat-list-item .mat-list-item-content {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.list__name {
+  display: block;
+  margin: 0;
+}
+
+.list__job {
+  display: block;
+  margin: 0;
+}
+
+.list__info {
+  flex-basis: 70%;
+}
+
+.list__img {
+  flex-basis: 30%;
+  img {
+    width: 60px;
+  }
+}
