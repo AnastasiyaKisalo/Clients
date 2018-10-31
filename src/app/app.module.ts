@@ -7,20 +7,22 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
-import { SearchComponent } from './search/search.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import { CardComponent } from './card/card.component';
 import {MatCardModule} from '@angular/material/card';
-import {ClientService} from "./services/clients.service";
-import {HttpClientModule} from "@angular/common/http";
+import {ClientService} from './services/clients.service';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {SearchPipe} from './sidenav/search.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    SearchComponent,
-    CardComponent
+    CardComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ClientService],
   bootstrap: [AppComponent]

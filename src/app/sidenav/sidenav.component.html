@@ -1,6 +1,11 @@
+<div class="search__container">
+  <mat-form-field>
+    <input class="search__input" matInput placeholder="Search" [(ngModel)]="searchStr">
+    <mat-error></mat-error>
+  </mat-form-field>
+</div>
 <mat-list>
-  <mat-list-item *ngFor="let client of clientList; let i = index"
-                 [class.selected]="client === selectedClient"
+  <mat-list-item *ngFor="let client of clientList | searchFilter:searchStr"
                  (click)="onSelect(client)">
     <div class="list__img">
       <img src="{{ client.general.avatar }}" alt="{{ client.general.lastName }}">
