@@ -1,9 +1,8 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs/index';
+import {Observable} from 'rxjs/index';
 import {Client} from '../models/clients';
-import { map } from 'rxjs/operators';
-import {catchError, tap} from "rxjs/internal/operators";
+
 
 @Injectable()
 export class ClientService {
@@ -28,13 +27,5 @@ export class ClientService {
   }
   getSelectedClient(): Client {
     return this.selectedClient;
-  }
-  searchClients(term: string): Observable<Client[]> {
-    if (!term.trim()) {
-      return of([]);
-    }
-    return this.http.get<Client[]>(`${this.clientsUrl}/?name=${term}`).pipe(
-
-    );
   }
 }

@@ -8,7 +8,6 @@ import {ClientService} from '../services/clients.service';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  selectedClient: Client;
 
   constructor(private clientService: ClientService) { }
 
